@@ -96,7 +96,7 @@ export const ChatIA = () => {
                   ? 'bg-light text-white'
                   : 'bg-accent text-white'
                   }`}>
-                  {message.type === 'user' ? <User size={16} /> : <img src="robo.png" alt="Bot" className="w-40 h-40 object-contain" />}
+                  {message.type === 'user' ? <User size={16} /> : <img src="robo.png" alt="Bot" className="w-40 h-40 " />}
                 </div>
                 <div className={`rounded-2xl px-4 py-3 ${message.type === 'user'
                   ? 'bg-light text-white'
@@ -107,7 +107,9 @@ export const ChatIA = () => {
                   {message.type === 'user' ? (
                     <p className="text-sm leading-relaxed">{message.content}</p>
                   ) : (
+                    
                     <div className="text-sm">
+                      
                       <MarkdownRenderer content={message.content} />
                     </div>
                   )}
@@ -125,7 +127,7 @@ export const ChatIA = () => {
             <div className="flex justify-start">
               <div className="flex items-start space-x-3 max-w-[80%]">
                 <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center">
-                  <img src="robo.png" alt="Bot" className="w-16 h-16 object-contain" />
+                  <img src="robo.png" alt="Bot" className="w-40 h-40 object-contain" />
                 </div>
                 <div className="bg-gray-100 rounded-2xl px-4 py-3">
                   <div className="flex items-center space-x-2">
