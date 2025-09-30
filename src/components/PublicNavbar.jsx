@@ -26,41 +26,40 @@ export const PublicNavbar = () => {
     <nav className=" backdrop-blur-md border-b border-white/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          
+
           {/* Logo + Nome do sistema */}
           <div className="flex items-center space-x-3 md:space-x-4">
             <div className="relative">
               {/* Logo */}
-              <img 
-                src="/logo.png" 
-                alt="Lunysse" 
-                className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl shadow-lg" 
+              <img
+                src="/logo.png"
+                alt="MenteCare"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl shadow-lg"
               />
               {/* Efeito de brilho atrás do logo */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-light to-accent rounded-lg md:rounded-xl blur opacity-30"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-light rounded-lg md:rounded-xl blur opacity-30"></div>
             </div>
             {/* Nome e descrição */}
             <div>
               <span className="text-xl md:text-2xl font-bold text-white">
-                Lunysse
+                MenteCare
               </span>
               <p className="text-xs text-white/60 font-medium hidden sm:block">
                 Sistema Psicológico
               </p>
             </div>
           </div>
-          
+
           {/* Links para desktop */}
           <div className="flex items-center space-x-3 md:space-x-6">
             {navLinks.slice(0, -1).map(link => ( // Mostra todos os links, menos o último (login)
               <Link
                 key={link.to}
                 to={link.to}
-                className={`hidden sm:block font-medium transition-colors text-sm md:text-base ${
-                  isActive(link.to)
+                className={`hidden sm:block font-medium transition-colors text-sm md:text-base ${isActive(link.to)
                     ? 'text-purple-200/80' // Se for a rota atual, destaca
                     : 'text-white/70 hover:text-light' // Caso contrário, fica cinza e muda no hover
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -68,11 +67,12 @@ export const PublicNavbar = () => {
 
             {/* Botão de Login (diferente dos outros links) */}
             <Link to="/login">
-              <button className="bg-gradient-to-r from-light to-accent text-white px-3 md:px-4 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 text-sm md:text-base">
+              <button className="bg-violet-900 text-white px-3 md:px-4 py-2 rounded-lg font-medium hover:bg-violet-800 hover:shadow-lg transition-all duration-300 text-sm md:text-base">
                 <span className="hidden sm:inline">Entrar</span>
                 <span className="sm:hidden">Login</span>
               </button>
             </Link>
+
           </div>
 
           {/* Botão de abrir/fechar menu mobile */}
@@ -96,11 +96,10 @@ export const PublicNavbar = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`block px-3 py-2 rounded-lg transition-colors ${
-                    isActive(link.to)
+                  className={`block px-3 py-2 rounded-lg transition-colors ${isActive(link.to)
                       ? 'text-light bg-light/10 font-medium' // Link ativo
                       : 'text-dark/70 hover:text-light hover:bg-light/5' // Link normal
-                  }`}
+                    }`}
                   onClick={() => setIsOpen(false)} // Fecha o menu ao clicar
                 >
                   {link.label}
