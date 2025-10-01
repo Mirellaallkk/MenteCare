@@ -1,4 +1,4 @@
-#  MenteCare - Sistema de Agendamento Psicológico
+# ❤️‍🩹 MenteCare - Sistema de Agendamento Psicológico
 
 Sistema web moderno para gestão de consultas psicológicas, desenvolvido com React 19 + Vite, focado em atendimentos voluntários em universidades, ONGs e projetos sociais.
 
@@ -155,39 +155,43 @@ http://localhost:5173
 ```
 src/
 ├── components/          # Componentes reutilizáveis
-│   ├── Button.jsx      # Botão customizado com variantes
-│   ├── Card.jsx        # Container com glassmorphism
-│   ├── Input.jsx       # Input com validação e show/hide password
-│   ├── LoadingSpinner.jsx # Spinner de carregamento
+│   ├── Button.jsx          # Botão customizado com variantes
+│   ├── Card.jsx            # Container com glassmorphism
+│   ├── FormField.jsx       # Campo de formulário com validação e label customizada
+│   ├── FormSelect.jsx      # Select dropdown customizado para formulários
+│   ├── Input.jsx           # Input com validação e show/hide password
+│   ├── LoadingSpinner.jsx  # Spinner de carregamento animado
 │   ├── MarkdownRenderer.jsx # Renderizador de markdown para IA
-│   ├── Modal.jsx       # Modal responsivo com overlay
-│   ├── PublicNavbar.jsx # Navbar para páginas públicas
-│   └── Sidebar.jsx     # Sidebar adaptativa para usuários autenticados
-├── context/            # Contextos React
-│   └── AuthContext.jsx # Contexto de autenticação
-├── pages/              # Páginas da aplicação
-│   ├── About.jsx       # Página sobre o projeto
-│   ├── Agendamento.jsx # Sistema de agendamento (pacientes)
-│   ├── ChatIA.jsx      # Chat com IA especializada (psicólogos)
-│   ├── DashboardPaciente.jsx # Dashboard para pacientes
-│   ├── DashboardPsicologo.jsx # Dashboard para psicólogos
-│   ├── Home.jsx        # Página inicial pública
-│   ├── Login.jsx       # Login padrão
-│   ├── NotFound.jsx    # Página 404 personalizada
-│   ├── PacienteDetalhes.jsx # Detalhes e histórico do paciente
-│   ├── Pacientes.jsx   # Lista de pacientes (psicólogos)
-│   ├── Register.jsx    # Cadastro de usuários
-│   ├── Relatorios.jsx  # Relatórios e analytics (psicólogos)
-│   └── SessaoDetalhes.jsx # Detalhes e gestão de sessões
-├── routes/             # Configuração de rotas
-│   └── AppRoutes.jsx   # Rotas principais
-├── services/           # Serviços e APIs
-│   ├── aiService.js    # Serviço de IA
-│   └── mockApi.js      # API mockada
-├── App.jsx             # Componente principal
-├── index.css           # Estilos globais Tailwind
-└── main.jsx            # Entry point
-```
+│   ├── PublicNavbar.jsx    # Navbar para páginas públicas
+│   ├── Sidebar.jsx         # Sidebar adaptativa para usuários autenticados
+│   ├── TextArea.jsx        # Área de texto customizada com validação
+│   └── UpcomingAppointmentItem.jsx # Item de lista para próximos agendamentos
+├── context/              # Contextos React
+│   └── AuthContext.jsx     # Contexto de autenticação e estado do usuário
+├── pages/                # Páginas da aplicação
+│   ├── About.jsx           # Página sobre o projeto e equipe
+│   ├── Agendamento.jsx     # Sistema de agendamento para pacientes
+│   ├── ChatIA.jsx          # Chat com IA especializada para psicólogos
+│   ├── DashboardPaciente.jsx # Dashboard com informações do paciente
+│   ├── DashboardPsicologo.jsx # Dashboard com dados e agendas para psicólogos
+│   ├── Home.jsx            # Página inicial pública
+│   ├── Login.jsx           # Página de login padrão
+│   ├── NotFound.jsx        # Página 404 personalizada para rotas inválidas
+│   ├── PacienteDetalhes.jsx # Detalhes e histórico clínico do paciente
+│   ├── Pacientes.jsx       # Lista de pacientes para psicólogos
+│   ├── Register.jsx        # Cadastro de novos usuários
+│   ├── Relatorios.jsx      # Relatórios e análises para psicólogos
+│   ├── SessaoDetalhes.jsx  # Detalhes e gerenciamento de sessões
+│   └── Solicitacoes.jsx    # Gerenciamento de solicitações pendentes
+├── routes/               # Configuração de rotas da aplicação
+│   └── AppRoutes.jsx       # Rotas principais da aplicação
+├── services/             # Serviços e APIs
+│   ├── aiService.js        # Serviço para integração com IA
+│   └── mockApi.js          # API mockada para desenvolvimento e testes
+├── App.jsx               # Componente principal da aplicação
+├── index.css             # Estilos globais usando TailwindCSS
+└── main.jsx              # Entry point da aplicação React
+
 
 ## 🔌 API Mock
 

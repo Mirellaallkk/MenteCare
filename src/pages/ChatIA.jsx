@@ -96,7 +96,7 @@ export const ChatIA = () => {
                   ? 'bg-light text-white'
                   : 'bg-accent text-white'
                   }`}>
-                  {message.type === 'user' ? <User size={16} /> : <img src="robo.png" alt="Bot" className="w-40 h-40 " />}
+                  {message.type === 'user' ? <User size={16} /> : <img src="robo.png" alt="Bot" className="w-60 h-20 " />}
                 </div>
                 <div className={`rounded-2xl px-4 py-3 ${message.type === 'user'
                   ? 'bg-light text-white'
@@ -173,7 +173,7 @@ export const ChatIA = () => {
 
       {/* Quick Actions */}
       <div className="mt-6">
-        <h3 className="text-lg font-semibold text-dark mb-3">Perguntas Sugeridas</h3>
+        <h3 className="text-lg font-semibold text-white mb-3">Perguntas Sugeridas</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {[
             'Como lidar com pacientes com ansiedade?',

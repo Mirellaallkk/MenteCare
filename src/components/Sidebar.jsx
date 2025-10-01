@@ -55,7 +55,7 @@ export const Sidebar = () => {
 
             <div>
               <span className="text-xl font-bold text-white ">MenteCare</span>
-              <p className="text-xs text-white/60">Sistema Psicológico</p>
+              <p className="text-xs text-white">Sistema Psicológico</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ export const Sidebar = () => {
               </div>
               <div>
                 <p className="text-white font-medium">{user?.name}</p>
-                <p className="text-xs text-white/60 capitalize">{user?.type}</p>
+                <p className="text-xs text-white/80 capitalize">{user?.type}</p>
               </div>
             </div>
           </div>
@@ -81,8 +81,8 @@ export const Sidebar = () => {
                     to={link.to}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${
                       isActive(link.to)
-                        ? 'bg-light text-white'
-                        : 'text-white/70 hover:text-white hover:bg-white/10'
+                        ? 'bg-light/40 text-white'
+                        : 'text-white/80 hover:text-white hover:bg-white/10'
                     }`}
                     onClick={() => setIsOpen(false)} // Fecha menu mobile ao clicar
                   >
