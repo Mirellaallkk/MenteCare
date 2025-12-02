@@ -3,7 +3,7 @@ import { Send, Bot, User, Loader2, AlertCircle } from 'lucide-react';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
-import { enviarParaIA } from '../services/aiService';
+import { mlService } from '../services/apiService';
 
 export const ChatIA = () => {
   const [messages, setMessages] = useState([
@@ -45,7 +45,7 @@ export const ChatIA = () => {
     setError(null);
 
     try {
-      const aiResponse = await enviarParaIA(currentInput, messages);
+      const aiResponse = await mlService.enviarParaIA(currentInput, messages);
       const botMessage = {
         id: Date.now() + 1,
         type: 'bot',

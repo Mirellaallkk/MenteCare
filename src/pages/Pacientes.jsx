@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { mockApi } from '../services/mockApi';
 import { Card } from '../components/Card';
 import { LoadingSpinner } from '../components/LoadingSpinner';
 import { User, Mail, Phone, Calendar, Activity, CheckCircle } from 'lucide-react';
+import { patientService } from '../services/apiService';
  
 export const Pacientes = () => {
   const { user } = useAuth();
@@ -15,7 +15,7 @@ export const Pacientes = () => {
   const loadPatients = async () => {
     setLoading(true);
     try {
-      const data = await mockApi.getPatients(user.id);
+      const data = await patientService.getPatients(user.id);
       console.log('Pacientes carregados:', data); // Debug
       setPatients(data);
     } catch (error) {
@@ -47,7 +47,7 @@ export const Pacientes = () => {
       <div className="grid gap-6">
         {patients.length === 0 ? (
           <Card className="text-center py-12">
-            <Users className="w-16 h-16 text-dark/30 mx-auto mb-4" />
+            <User className="w-16 h-16 text-dark/30 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-dark mb-2">Nenhum paciente encontrado</h3>
             <p className="text-dark/70">
               Seus pacientes aparecerão aqui conforme os agendamentos.

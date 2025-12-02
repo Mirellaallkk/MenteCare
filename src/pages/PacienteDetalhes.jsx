@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import { useAuth } from "../context/AuthContext";
-import { mockApi } from "../services/mockApi";
- 
 import { Input } from "../components/Input";
 import { Card } from "../components/Card";
 import { Button } from "../components/Button";
@@ -10,6 +8,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
  
 import { ArrowLeft, User, Mail, Phone, Calendar, ActivitySquareIcon, CheckCircle, Clock, Eye, Plus, Activity } from "lucide-react";
 import toast from "react-hot-toast";
+import { patientService } from "../services/apiService";
  
  
 const PatientInfo = ({ patient }) => {
@@ -293,7 +292,7 @@ export const PacienteDetalhes = () => {
  
         try {
  
-            await mockApi.updateSessionStatus(sessionId, newStatus);
+            await patientService.updateSessionStatus(sessionId, newStatus);
  
             setSessions(prev => prev.map(session =>
  
@@ -331,7 +330,7 @@ export const PacienteDetalhes = () => {
  
         try {
  
-            const newSession = await mockApi.createAppointment({
+            const newSession = await patientService.createAppointment({
  
                 patientId: parseInt(id),
  
@@ -375,7 +374,7 @@ export const PacienteDetalhes = () => {
  
             try {
  
-                const patients = await mockApi.getPatients(user.id);
+                const patients = await patientService.getPatients(user.id);
  
                 const patientData = patients.find(p => p.id === parseInt(id));
  
@@ -389,7 +388,7 @@ export const PacienteDetalhes = () => {
  
                 setPatient(patientData);
  
-                const appointments = await mockApi.getAppointments(user.id, 'psicologo');
+                const appointments = await patientService.getAppointments(user.id, 'psicologo');
  
                 const patientSessions = appointments
  
